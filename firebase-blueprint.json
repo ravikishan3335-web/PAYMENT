@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile document",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "PaymentReceipt": {
+      "title": "PaymentReceipt",
+      "description": "Extracted payment receipt record saved by the user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "fileName": { "type": "string" },
+        "fileSize": { "type": "string" },
+        "name": { "type": "string" },
+        "sender": { "type": "string" },
+        "receiver": { "type": "string" },
+        "amount": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "transactionId": { "type": "string" },
+        "upiId": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "bankWallet": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "userId", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile data accessible only by the owner"
+    },
+    "/users/{userId}/receipts/{receiptId}": {
+      "schema": "PaymentReceipt",
+      "description": "Payment receipts scanned and owned by the specific user"
+    }
+  }
+}

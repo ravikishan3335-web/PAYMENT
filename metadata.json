@@ -2,5 +2,7 @@
   "name": "Payment Screenshot to Excel",
   "description": "Upload payment screenshots, automatically extract transaction details, edit or verify information, and export to Excel (.xlsx) and PDF.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
